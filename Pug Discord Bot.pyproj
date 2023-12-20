@@ -43,7 +43,6 @@
     <Folder Include="api\" />
     <Folder Include="cogs\" />
     <Folder Include="database\" />
-    <Folder Include="Demos\" />
     <Folder Include="Processors\" />
     <Folder Include="templates\" />
   </ItemGroup>

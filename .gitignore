@@ -364,3 +364,13 @@ FodyWeavers.xsd
 /.env
 /api/match_1.json
 /database/players.db
+/env/pyvenv.cfg
+/env/Lib/site-packages/distutils-precedence.pth
+/env/Lib/site-packages/setuptools-63.2.0.dist-info/entry_points.txt
+/env/Lib/site-packages/setuptools-63.2.0.dist-info/INSTALLER
+/env/Lib/site-packages/setuptools-63.2.0.dist-info/LICENSE
+/env/Lib/site-packages/setuptools-63.2.0.dist-info/METADATA
+/env/Lib/site-packages/setuptools-63.2.0.dist-info/RECORD
+/env/Lib/site-packages/setuptools-63.2.0.dist-info/REQUESTED
+/env/Lib/site-packages/setuptools-63.2.0.dist-info/top_level.txt
+/env/Lib/site-packages/setuptools-63.2.0.dist-info/WHEEL

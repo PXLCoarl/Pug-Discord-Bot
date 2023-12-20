@@ -1,4 +1,4 @@
-##Done:
+## Done:
 - [x] Discord UI
 - [x] Link Steam Accounts
 - [x] SQLite3 db
@@ -16,6 +16,7 @@
 - [ ] make map vote available only for captains
 - [ ] far future: maybe implement choice between bo1, bo3 and bo3?
 - [ ] implement multiple map pools (eg: active duty, all cs2 maps, list of workshop maps usw... (maybe make map pool votable by all players?))
+- [ ] finish the webinterface (downloadable match demos, also api endpoint for match.jsons)
 
 
 

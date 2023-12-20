@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>Pug Discord Bot</Name>
     <RootNamespace>Pug Discord Bot</RootNamespace>
+    <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,16 +29,20 @@
     <Compile Include="flask_app.py" />
     <Compile Include="main.py" />
     <Compile Include="Processors\EmbedBuilder.py" />
+    <Compile Include="Processors\QueuePop.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".env" />
     <Content Include="api\match_1.json" />
-    <Content Include="requirements.txt" />
+    <Content Include="database\players.db" />
+    <Content Include="README.md" />
+    <Content Include="servers.json" />
     <Content Include="templates\index.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="api\" />
     <Folder Include="cogs\" />
+    <Folder Include="database\" />
     <Folder Include="Demos\" />
     <Folder Include="Processors\" />
     <Folder Include="templates\" />

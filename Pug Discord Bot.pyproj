@@ -32,6 +32,7 @@
   <ItemGroup>
     <Content Include=".env" />
     <Content Include="api\match_1.json" />
+    <Content Include="requirements.txt" />
     <Content Include="templates\index.html" />
   </ItemGroup>
   <ItemGroup>

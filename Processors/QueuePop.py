@@ -33,7 +33,7 @@ class VoteSelect(Select):
 class QueuePop():
     async def on_queue_full(interaction: discord.Interaction, people_in_queue, match_id):
         await interaction.edit_original_response(view=EmptyView())
-        team1_members, team2_members, team1_formatted, team2_formatted, avg_elo_team1, avg_elo_team2 = await CreateMatch.create_match(people_in_queue, interaction)
+        team1_members, team2_members, team1_formatted, team2_formatted, avg_elo_team1, avg_elo_team2, player_data = await CreateMatch.create_match(people_in_queue, interaction)
         
         original_msg = await interaction.message.fetch()
         embed = original_msg.embeds[0]
@@ -58,8 +58,8 @@ class QueuePop():
         
         # maybe shouldnt even be in here but in a separate def called by QueuePop:
 
-        # match_file = await CreateMatch.create_match_json(team1_members, team2_members, team1_formatted, team2_formatted, player_data, match_id)
-        # RconClient.create_rcon_client(server_id=1, match_file=match_file)
+        #match_file = await CreateMatch.create_match_json(team1_members, team2_members, team1_formatted, team2_formatted, player_data, match_id)
+        #RconClient.create_rcon_client(server_id=1, match_file=match_file)
 
 
 
@@ -173,6 +173,8 @@ class CreateMatch():
         "min_players_to_ready": len(player_data),
         "cvars": {"hostname": f"Munich eSports Pug: Team {team1_members[0]} vs Team {team2_members[0]}", "mp_friendlyfire": "0"}
         }
+        if not os.path.exists('./api'):
+            os.mkdir('./api')
         with open(f'./api/match_{match_id}.json', 'w') as file:
             json.dump(match_data, file, indent=4)
             
@@ -195,7 +197,7 @@ class CreateMatch():
         people_in_queue.clear() #Make room for a new queue     
         
         team1_members, team2_members, team1_formatted, team2_formatted, avg_elo_team1, avg_elo_team2 = await CreateMatch.create_teams(interaction,player_data)
-        return team1_members, team2_members, team1_formatted, team2_formatted, avg_elo_team1, avg_elo_team2
+        return team1_members, team2_members, team1_formatted, team2_formatted, avg_elo_team1, avg_elo_team2, player_data
         
         
 

@@ -9,7 +9,7 @@
 - [x] push match_{match_id}.json onto free server using rcon
 
 
-## To be Done:
+##To be Done:
 - [ ] handle match_id
 - [ ] make highest elo player team captain
 - [ ] implement map vote

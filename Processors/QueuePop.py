@@ -1,8 +1,6 @@
-from venv import create
 import discord
 import sqlite3
 import requests
-import itertools
 import os
 import json
 from pulp import LpProblem, LpMinimize, LpVariable, lpSum, LpVariable, LpInteger
@@ -41,8 +39,8 @@ class QueuePop():
         embed = original_msg.embeds[0]
         embed.title = 'Match'
         embed.description = 'The teams are as followed:'
-        embed.set_field_at(0, name=f'Team {team1_members[0]}', value=f'avg elo: {avg_elo_team1}\n' + '\n'.join([f'{member.name}' for member in team1_members]), inline=True)
-        embed.add_field(name=f'Team {team2_members[0]}', value=f'avg_elo: {avg_elo_team2}\n' + '\n'.join([f'{member.name}' for member in team2_members]), inline=True)
+        embed.set_field_at(0, name=f'Team {team1_members[0]}', value=f'avg elo: {int(avg_elo_team1)}\n' + '\n'.join([f'{member.name}' for member in team1_members]), inline=True)
+        embed.add_field(name=f'Team {team2_members[0]}', value=f'avg_elo: {int(avg_elo_team2)}\n' + '\n'.join([f'{member.name}' for member in team2_members]), inline=True)
         # todo:
         # - somehow handle match_id (dunno how yet, or if i even should)
         # - make highest elo player captain
